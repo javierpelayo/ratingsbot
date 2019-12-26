@@ -19,7 +19,6 @@ submissions_id = []
 comments_by_id = []
 comment_content = []
 rating = []
-level = ""
 commented = False
 ind = 0
 
@@ -82,7 +81,7 @@ while ind != 10:
                 rating.append(10)
 
             ## If we already commented on this post
-            if "UGLY LEVEL/MEAN RATING:" in content:
+            if "OVERALL RATING:" in content:
                 commented = True
 
         ## Get the sum of rating and divide by len of list to get the mean
@@ -90,23 +89,14 @@ while ind != 10:
         rate_len = len(rating)
         total_rating = rate_sum / rate_len
 
-        ## Determines ugly level based on rating
-        if total_rating >= 4 and total_rating <= 6:
-            level = "average"
-        elif total_rating < 4:
-            level = "ugly"
-        elif total_rating > 6:
-            level = "hot"
-
         if commented == False:
             ## Try to comment on the post, if not possible then it means reddit isnt letting us
             try:
-                submissions_id[ind].reply("**UGLY LEVEL/MEAN RATING:** {}/{}".format(level, total_rating))
+                submissions_id[ind].reply("**OVERALL RATING:** {}/10".format(total_rating))
                 ## RESET THE VALUES
                 del comments_by_id[:]
                 del comment_content[:]
                 del rating[:]
-                level = ""
                 ind += 1
             except:
                 print("\nOOPS I'M POSTING TOO OFTEN WAITING 10MINS\n")
@@ -117,7 +107,6 @@ while ind != 10:
             del comments_by_id[:]
             del comment_content[:]
             del rating[:]
-            level = ""
             commented = False
             ind += 1
 
