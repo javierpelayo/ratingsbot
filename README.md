@@ -6,11 +6,11 @@ The bot currently takes the "hot" top 10 posts but this limit can be adjusted. F
 
 If you wish to use configparser simply make a praw.ini file and create the file structure such as:
 
-[DEFAULT]
-client_id = 123
-client_secret = 123
-user_agent = example.uglybot.v1.2.3 (by /u/example)
-username = example
-password = 123456
+[DEFAULT]\n
+client_id = 123\n
+client_secret = 123\n
+user_agent = example.uglybot.v1.2.3 (by /u/example)\n
+username = example\n
+password = 123456\n
 
 app.py should read from it with no problems so long as you don't put parenthesis around the information.
