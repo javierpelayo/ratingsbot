@@ -4,6 +4,8 @@ This bot scrapes a subreddits posts, then scrapes the posts comments and looks f
 
 The bot currently takes the "hot" top 10 posts but this limit can be adjusted. From there it iterates through the 10 posts looking to see whether it already commented, if not then it comments the posts overall rating and the ugly level of the person.
 
+The day of the post is also taken into account, if the post is older or equal to todays date than it will comment on it. I originally wanted to make it so it wouldn't comment on a post if it was less than a day old since there would not be many comments but this can also be adjusted. 
+
 If you wish to use configparser simply make a praw.ini file and create the file structure such as:
 
 [DEFAULT]  
