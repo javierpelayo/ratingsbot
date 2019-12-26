@@ -102,6 +102,7 @@ while ind != 10:
             ## Try to comment on the post, if not possible then it means reddit isnt letting us
             try:
                 submissions_id[ind].reply("**UGLY LEVEL/MEAN RATING:** {}/{}".format(level, total_rating))
+                ## RESET THE VALUES
                 del comments_by_id[:]
                 del comment_content[:]
                 del rating[:]
@@ -112,6 +113,11 @@ while ind != 10:
                 sleep(600)
         else:
             print("ALREADY EVALUATED THIS POST: {}".format(submissions_id[ind].title))
+            ## RESET THE VALUES
+            del comments_by_id[:]
+            del comment_content[:]
+            del rating[:]
+            level = ""
             commented = False
             ind += 1
 
