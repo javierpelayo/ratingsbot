@@ -27,7 +27,7 @@ for submissions in subreddit.hot(limit=10):
     submissions_id.append(submissions)
 
 ## This will go through each post and comment the ugly level
-while ind != 10:
+while ind < 10:
     ## Get the comment ids from the latest submission
     comment_ids = submissions_id[ind].comments
 
