@@ -94,7 +94,7 @@ while ind != 10:
         if commented == False:
             ## Try to comment on the post, if not possible then it means reddit isnt letting us
             try:
-                submissions_id[ind].reply("**OVERALL RATING:** {}/10".format(total_rating))
+                submissions_id[ind].reply("**OVERALL RATING:** {0:.1g}/10".format(total_rating))
                 ## RESET THE VALUES
                 del comments_by_id[:]
                 del comment_content[:]
