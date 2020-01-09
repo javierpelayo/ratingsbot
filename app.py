@@ -109,7 +109,7 @@ def inProgress(posts, frame):
             try:
                 total_rating = rate_sum / rate_len
             except:
-                total_rating = 0
+                total_rating = 5
             if commented == False:
                 ## Try to comment on the post, if not possible then it means reddit isnt letting us
                 try:
@@ -143,12 +143,14 @@ def inProgress(posts, frame):
 def main():
     mainFrame = Frame(root)
     mainFrame.grid()
+    subLabel = Label(mainFrame, text="Sub: r/rateme")
     postLabel = Label(mainFrame, text="Posts")
     postEntry = Entry(mainFrame)
     start = Button(mainFrame, text="Start",command=lambda: inProgress(postEntry.get(), mainFrame))
-    postLabel.grid(column=0,row=0)
-    postEntry.grid(column=1,row=0,columnspan=2)
-    start.grid(columnspan=3, row=3)
+    subLabel.grid(columnspan=3, row=0)
+    postLabel.grid(column=0,row=1)
+    postEntry.grid(column=1,row=1,columnspan=2)
+    start.grid(columnspan=3, row=2)
 
 
 main()
