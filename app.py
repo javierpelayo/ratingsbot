@@ -69,38 +69,9 @@ def inProgress(posts, frame):
             # check comment content if it has a rating,
             # if it does append the rating
             for content in comment_content:
-                if "1/10" in content:
-                    rating.append(1)
-                elif "4.5/10" in content:
-                    rating.append(5)
-                elif "5.5/10" in content:
-                    rating.append(6)
-                elif "6.5/10" in content:
-                    rating.append(7)
-                elif "7.5/10" in content:
-                    rating.append(8)
-                elif "8.5/10" in content:
-                    rating.append(9)
-                elif "9.5/10" in content:
-                    rating.append(10)
-                elif "2/10" in content:
-                    rating.append(2)
-                elif "3/10" in content:
-                    rating.append(3)
-                elif "4/10" in content:
-                    rating.append(4)
-                elif "5/10" in content:
-                    rating.append(5)
-                elif "6/10" in content:
-                    rating.append(6)
-                elif "7/10" in content:
-                    rating.append(7)
-                elif "8/10" in content:
-                    rating.append(8)
-                elif "9/10" in content:
-                    rating.append(9)
-                elif "10/10" in content:
-                    rating.append(10)
+                for num in range(11):
+                    if (str(num) + "/10") in content:
+                        rating.append(num)
 
                 # If we already commented on this post
                 if "OVERALL RATING:" in content:
