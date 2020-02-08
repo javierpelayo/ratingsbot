@@ -96,7 +96,7 @@ def inProgress(posts, frame):
                     del rating[:]
                     ind += 1
                     comments += 1
-                except praw.errors.RateLimitExceeded:
+                except praw.exceptions.APIException:
                     print("\nOOPS I'M POSTING TOO OFTEN WAITING 10MINS\n")
                     sleep(600)
             else:
