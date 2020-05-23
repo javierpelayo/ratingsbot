@@ -1,5 +1,7 @@
 # RATINGS BOT #
 
+Uses Reddits PRAW API.
+
 This simple bot scrapes a subreddits posts, then scrapes the posts comments and looks for ratings. Once those ratings are found they are appended to a list where we can get the average rating from.
 
 The bot currently takes the "hot" top 10 posts from Reddit but this limit can be adjusted. From there it iterates through the 10 posts looking to see whether it already commented, if not then it comments the posts overall rating.
